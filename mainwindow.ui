@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>901</width>
-    <height>451</height>
+    <width>1039</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,9 @@
       </item>
       <item>
        <widget class="QLineEdit" name="lineEdit_lookupTable">
+        <property name="toolTip">
+         <string>Characters to use for the generated text</string>
+        </property>
         <property name="text">
          <string>#-.</string>
         </property>
@@ -40,6 +43,9 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="1">
        <widget class="QTextBrowser" name="textBrowser_outputText">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
         <property name="lineWrapMode">
          <enum>QTextEdit::NoWrap</enum>
         </property>
@@ -79,7 +85,7 @@ p, li { white-space: pre-wrap; }
            <number>1</number>
           </property>
           <property name="maximum">
-           <number>500</number>
+           <number>99999</number>
           </property>
           <property name="singleStep">
            <number>10</number>
@@ -111,7 +117,7 @@ p, li { white-space: pre-wrap; }
            <number>1</number>
           </property>
           <property name="maximum">
-           <number>500</number>
+           <number>99999</number>
           </property>
           <property name="singleStep">
            <number>10</number>
@@ -128,7 +134,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>0</width>
             <height>20</height>
            </size>
           </property>
@@ -153,17 +159,50 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
+         <widget class="QCheckBox" name="checkBox_coloredText">
+          <property name="toolTip">
+           <string>Use pixel colors from the source image to assign colors to the generated text</string>
+          </property>
+          <property name="text">
+           <string>Colored Text</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_background_color">
+          <property name="toolTip">
+           <string>Change the background color</string>
+          </property>
+          <property name="text">
+           <string>Background</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>0</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_fullscreen">
+          <property name="toolTip">
+           <string>Show text window in fullscreen mode (Esc to leave)</string>
+          </property>
+          <property name="text">
+           <string>Fullscreen</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

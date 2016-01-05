@@ -1,11 +1,12 @@
 #include "converter.h"
-#include <stdio.h>
+
+#include <QColor>
 
 Converter::Converter()
 {
 }
 
-QString Converter::convert(QImage &image, QString &lookupTable) {
+QString Converter::convert(QImage &image, QString &lookupTable, bool coloredText) {
     QString result("");
 
     if(lookupTable.size() == 0 || lookupTable.isNull()) {
@@ -29,10 +30,19 @@ QString Converter::convert(QImage &image, QString &lookupTable) {
                 shade = lookupTable.size() - 1;
             }
 
-            result.append(lookupTable.at(shade));
+            if(coloredText) {
+                result.append("<font color=\"");
+                result.append(QColor(scanline[x]).name());
+                result.append("\">");
+                result.append(lookupTable.at(shade));
+                result.append("</font>");
+            }
+            else {
+                result.append(lookupTable.at(shade));
+            }
         }
 
-        result.append("\n");
+        result.append("<br>");
     }
 
     return result;

@@ -22,6 +22,7 @@ private:
     Ui::MainWindow *ui;
     QImage input;
     Converter converter;
+    QColor backgroundColor;
 
     QImage scaleImage(QImage image);
     void fitInView();
@@ -30,6 +31,9 @@ public slots:
     void loadImage(QUrl url);
     void calculate();
     void setFontSize(int value);
+    void setBackgroundColor(QColor color);
+    void showBackgroundColorDialog();
+    void toggleFullscreen();
 };
 
 #endif // MAINWINDOW_H

@@ -8,7 +8,7 @@ class Converter
 {
 public:
     Converter();
-    QString convert(QImage &image, QString &lookupTable);
+    QString convert(QImage &image, QString &lookupTable, bool coloredText);
 };
 
 #endif // CONVERTER_H
